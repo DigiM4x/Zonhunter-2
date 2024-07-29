@@ -1,0 +1,9 @@
+name: zonhunter
+dependencies:
+  - python=3.9
+  - flask
+  - sqlalchemy
+  - mysql-connector-python
+  - pip:
+    - requests
+    - python-dotenv

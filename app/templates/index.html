@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Deals Scraper</title>
+</head>
+<body>
+    <h1>Amazon Deals Scraper</h1>
+    <form method="POST">
+        <label for="discount">Discount Percentage:</label>
+        <input type="number" id="discount" name="discount" min="1" max="100" required>
+        <br>
+        <label for="free_shipping">Free Shipping:</label>
+        <select id="free_shipping" name="free_shipping">
+            <option value="">Any</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <br>
+        <button type="submit">Search</button>
+    </form>
+    <h2>Deals</h2>
+    <ul>
+        {% for deal in deals %}
+        <li>
+            <a href="{{ deal.link }}">{{ deal.title }}</a>
+            <p>Discount: {{ deal.price.discount }}%</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
